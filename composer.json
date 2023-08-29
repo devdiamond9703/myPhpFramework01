@@ -1,0 +1,15 @@
+{
+    "name": "user/framework_php_01",
+    "authors": [
+        {
+            "name": "devdiamond",
+            "email": "devdiamond97@gmail.com"
+        }
+    ],
+    "autoload": {
+       "psr-4": {
+          "app\\": "./"
+       }
+    },
+    "require": {}
+}
