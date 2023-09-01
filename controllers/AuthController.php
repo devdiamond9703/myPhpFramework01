@@ -17,12 +17,11 @@ class AuthController extends Controller {
         if($request->isPost()) {
             $model->loadData($request->getBody());
             if($model->validate() && $model->register()) {
-
-            }
-            return 'Handler submited date';
+                return 'success';
+            } 
         }
         $this->setLayout('auth');
-        return $this->render('register');
+        return $this->render('register', ['model' => $model]);
     }
 
 }
