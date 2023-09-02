@@ -1,17 +1,18 @@
 <?php 
 namespace app\core;
-
 class Application {
 
+    public Database $db;
     public Router $router;
     public Request $request;
     public Response $response;
     public Controller $controller;
     public static string $ROOT_DIR;
-    public static Application $app;
+    public static Application $app;   
 
-    public function __construct($rootPath){
+    public function __construct($rootPath, $config){
         self::$app = $this;
+        $this->db = new Database($config['db']);
         self::$ROOT_DIR = $rootPath;
         $this->request = new Request();
         $this->response = new Response();
